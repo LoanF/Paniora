@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
         <head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/paniora.ico" />
         </head>
         <body>{children}</body>
     </html>
