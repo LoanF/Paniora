@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Tomate locale",
+    "image": "tomate.png",
+    "type": "local",
+    "price": 1.5,
+    "carbon": 0.1,
+    "origin": "locale",
+    "nutrition": "bonne",
+    "producer": "Ferme de la Garenne"
+  },
+  {
+    "id": 2,
+    "name": "Pomme importée",
+    "image": "pomme.png",
+    "type": "imported",
+    "price": 2.0,
+    "carbon": 0.5,
+    "origin": "importée",
+    "nutrition": "moyenne",
+    "producer": "Verger du Monde"
+  },
+  {
+    "id": 3,
+    "name": "Carotte bio",
+    "image": "carotte.png",
+    "type": "bio",
+    "price": 1.8,
+    "carbon": 0.2,
+    "origin": "locale",
+    "nutrition": "excellente",
+    "producer": "Ferme Bio"
+  },
+  {
+    "id": 4,
+    "name": "Banane importée",
+    "image": "banane.png",
+    "type": "imported",
+    "price": 1.2,
+    "carbon": 0.6,
+    "origin": "importée",
+    "nutrition": "moyenne",
+    "producer": "Banana World"
+  },
+  {
+    "id": 5,
+    "name": "Poire locale",
+    "image": "poire.png",
+    "type": "local",
+    "price": 1.5,
+    "carbon": 0.3,
+    "origin": "locale",
+    "nutrition": "bonne",
+    "producer": "Verger Local"
+  },
+  {
+    "id": 6,
+    "name": "Orange importée",
+    "image": "orange.png",
+    "type": "imported",
+    "price": 2.5,
+    "carbon": 0.7,
+    "origin": "importée",
+    "nutrition": "moyenne",
+    "producer": "Citrus Import"
+  }
+]

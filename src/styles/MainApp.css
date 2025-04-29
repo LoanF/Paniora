@@ -1,11 +1,16 @@
 .main-app {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+  cursor: default;
 }
 
 .products-list {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  justify-content: center;
+  width: 100%;
 }
