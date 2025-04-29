@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import SplashScreen from './pages/SplashScreen';
+import ProductItem from './components/ProductItem';
+import ShoppingCart from './components/ShoppingCart';
+import './styles/MainApp.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const MainApp = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Tomate locale', image: 'tomate.jpg', type: 'local' },
+    { id: 2, name: 'Pomme importée', image: 'pomme.jpg', type: 'imported' },
+    // Ajoutez d'autres produits ici
+  ]);
+
+  const handleSwipeUp = () => {
+    setShowSplash(false);
+  };
+
+  const handleDragStart = (e, product) => {
+    e.dataTransfer.setData('product', JSON.stringify(product));
+  };
+
+  const handleDrop = (product) => {
+    setCartItems([...cartItems, product]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="main-app">
+      {showSplash ? (
+        <SplashScreen onSwipeUp={handleSwipeUp} />
+      ) : (
+        <>
+          <div className="products-list">
+            {products.map((product) => (
+              <ProductItem
+                key={product.id}
+                product={product}
+                onDragStart={handleDragStart}
+              />
+            ))}
+          </div>
+          <ShoppingCart items={cartItems} onDrop={handleDrop} />
+        </>
+      )}
+    </div>
+  );
+};
 
-export default App
+export default MainApp;
