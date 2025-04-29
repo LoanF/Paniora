@@ -104,33 +104,6 @@ export default function CardStack({
         </div>
       </div>
 
-      {/* Cartes en arrière-plan (prochains produits) - affichées de manière décalée */}
-      {nextProducts.slice(0, 3).map((product, index) => (
-        <div
-          key={product.id}
-          className="absolute top-0 left-0 right-0 bg-white rounded-lg shadow-sm border border-gray-200"
-          style={{
-            transform: `scale(${0.95 - index * 0.05}) translateY(${(index + 1) * 15}px)`,
-            zIndex: 10 - index,
-            opacity: 0.8 - index * 0.2,
-            pointerEvents: "none", // Empêche les interactions avec les cartes en arrière-plan
-          }}
-        >
-          {/* Version simplifiée des cartes en arrière-plan */}
-          <div className="p-6 flex flex-col items-center">
-            <div className="w-16 h-16 rounded-full mb-4 overflow-hidden">
-              <div className={`w-full h-full flex items-center justify-center ${getTypeColor(product.type)}`}>
-                <span className="text-white font-bold">{product.name.charAt(0)}</span>
-              </div>
-            </div>
-            <div className="w-full text-center">
-              <div className="h-4 bg-gray-100 rounded w-3/4 mx-auto mb-2"></div>
-              <div className="h-3 bg-gray-100 rounded w-1/2 mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      ))}
-
       {/* Carte principale (produit actuel) */}
       <motion.div
         className="bg-white rounded-lg shadow-lg overflow-hidden cursor-grab active:cursor-grabbing z-20"

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 bg-gradient-to-b from-green-50 to-blue-50">
       <div className="w-full max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-2">Panier Écologique</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-2">Paniora</h1>
         <p className="text-center text-gray-600 mb-8">
           Choisissez les produits écologiques pour votre panier hebdomadaire
         </p>

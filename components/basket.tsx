@@ -58,11 +58,11 @@ export default function Basket({ items, onRemoveItem, disabled }: BasketProps) {
                     </div>
                     <div className="flex items-center">
                       <span className="text-sm mr-2">{item.price}</span>
-                      {!disabled && (
-                        <button onClick={() => onRemoveItem(item.id)} className="text-red-500 hover:text-red-700">
-                          <X className="w-4 h-4" />
-                        </button>
-                      )}
+                      {/*{!disabled && (*/}
+                      {/*  <button onClick={() => onRemoveItem(item.id)} className="text-red-500 hover:text-red-700">*/}
+                      {/*    <X className="w-4 h-4" />*/}
+                      {/*  </button>*/}
+                      {/*)}*/}
                     </div>
                   </motion.li>
                 )
