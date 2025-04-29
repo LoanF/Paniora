@@ -1,0 +1,10 @@
+.product-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 0.5rem;
+  cursor: grab;
+}
+
+.product-item img {
+  max-width: 100%;
+}

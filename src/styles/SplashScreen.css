@@ -1,0 +1,25 @@
+/* SplashScreen.css */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #538931;
+  cursor: grab;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0s; /* Désactive la transition par défaut */
+}
+
+.splash-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.splash-screen p {
+  font-size: 1.2rem;
+  text-align: center;
+}
