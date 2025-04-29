@@ -20,6 +20,11 @@ const MainApp = () => {
 
     const handleDrop = (product) => {
         setCartItems([...cartItems, product]);
+        setProducts(products.filter(p => p.id !== product.id));
+    };
+
+    const handleRemove = (productId) => {
+        setProducts(products.filter(p => p.id !== productId));
     };
 
     return (
