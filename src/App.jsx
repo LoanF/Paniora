@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SplashScreen from './pages/SplashScreen';
-import ProductItem from './components/ProductItem';
+import ProductStack from './components/ProductStack';
 import ShoppingCart from './components/ShoppingCart';
 import './styles/MainApp.css';
 
@@ -17,32 +17,30 @@ const MainApp = () => {
     setShowSplash(false);
   };
 
-  const handleDragStart = (e, product) => {
-    e.dataTransfer.setData('product', JSON.stringify(product));
+  const handleDragStart = (product) => {
+    // Vous pouvez ajouter des logiques supplémentaires ici si nécessaire
   };
 
   const handleDrop = (product) => {
     setCartItems([...cartItems, product]);
+    setProducts(products.filter(p => p.id !== product.id));
+  };
+
+  const handleRemove = (productId) => {
+    setProducts(products.filter(p => p.id !== productId));
   };
 
   return (
     <div className="main-app">
-      {showSplash ? (
-        <SplashScreen onSwipeUp={handleSwipeUp} />
-      ) : (
-        <>
-          <div className="products-list">
-            {products.map((product) => (
-              <ProductItem
-                key={product.id}
-                product={product}
-                onDragStart={handleDragStart}
-              />
-            ))}
-          </div>
-          <ShoppingCart items={cartItems} onDrop={handleDrop} />
-        </>
-      )}
+      <div className="app-content">
+        <ProductStack
+          products={products}
+          onDragStart={handleDragStart}
+          onRemove={handleRemove}
+        />
+        <ShoppingCart items={cartItems} onDrop={handleDrop} />
+      </div>
+      {showSplash && <SplashScreen onSwipeUp={handleSwipeUp} />}
     </div>
   );
 };

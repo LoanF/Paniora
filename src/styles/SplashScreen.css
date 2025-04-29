@@ -1,25 +1,39 @@
 /* SplashScreen.css */
 .splash-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #538931;
-  cursor: grab;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0s; /* Désactive la transition par défaut */
-}
-
-.splash-screen h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.splash-screen p {
-  font-size: 1.2rem;
-  text-align: center;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(76, 197, 94); /* Fond semi-transparent */
+    cursor: grab;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Assure que le splashscreen est au-dessus */
+    transition: transform 0s; /* Désactive la transition par défaut */
+    user-select: none; /* Désactive la sélection de texte */
+    -webkit-user-select: none; /* Pour Safari */
+    -moz-user-select: none; /* Pour Firefox */
+    -ms-user-select: none; /* Pour Internet Explorer/Edge */
+  }
+  
+  .splash-screen h1,
+  .splash-screen p {
+    user-select: none; /* Désactive la sélection de texte */
+    -webkit-user-select: none; /* Pour Safari */
+    -moz-user-select: none; /* Pour Firefox */
+    -ms-user-select: none; /* Pour Internet Explorer/Edge */
+  }
+  
+  .splash-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .splash-screen p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  

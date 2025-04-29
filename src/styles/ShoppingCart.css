@@ -1,10 +1,11 @@
 .shopping-cart {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  width: 300px;
-  margin: 1rem;
-}
-
-.shopping-cart h2 {
-  margin-top: 0;
-}
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 300px;
+    margin: 1rem;
+  }
+  
+  .shopping-cart h2 {
+    margin-top: 0;
+  }
+  

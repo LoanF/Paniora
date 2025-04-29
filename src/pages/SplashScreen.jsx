@@ -24,12 +24,13 @@ const SplashScreen = ({ onSwipeUp }) => {
     setIsDragging(false);
     document.body.style.cursor = 'grab';
 
-    if (translateY < -window.innerHeight * 0.5) {
+    if (translateY < -window.innerHeight * 0.1) {
       // Si le déplacement est supérieur à 50% de la hauteur de l'écran
       splashRef.current.style.transition = 'transform 0.5s ease';
       setTranslateY(-window.innerHeight);
       setTimeout(() => {
         onSwipeUp();
+        document.querySelector('.app-content').classList.add('visible');
       }, 500); // Attendre la fin de l'animation
     } else {
       // Revenir à la position initiale
